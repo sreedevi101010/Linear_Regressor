@@ -1,76 +1,94 @@
-# Linear Regression From Scratch
+# Linear Regression: From Scratch vs Scikit-Learn
 
-A simple implementation of Linear Regression from scratch in Python using NumPy, without using machine learning libraries such as Scikit-Learn.
+This repository demonstrates Linear Regression using two different approaches:
 
-## Overview
+1. A custom implementation built from scratch using NumPy and Gradient Descent.
+2. An implementation using Scikit-Learn's `LinearRegression` model.
 
-This project implements a Linear Regression model trained using Gradient Descent to predict salaries based on years of experience.
+The goal of this project is to understand the mathematical foundations of Linear Regression, implement the algorithm manually, and compare the results with a standard machine learning library.
 
-The model learns the relationship:
-
-y = wx + b
-
-where:
-
-- x = Years of Experience
-- y = Salary
-- w = Weight (slope)
-- b = Bias (intercept)
+---
 
 ## Features
 
-- Linear Regression implemented from scratch
+### From Scratch Implementation (LR.ipynb)
+
+- Custom Linear Regression class
 - Random weight and bias initialization
 - Gradient Descent optimization
 - Mean Squared Error (MSE) loss
 - Early stopping using convergence threshold
-- Visualization of regression line
 - Training loss tracking
+- Regression line visualization
+
+### Scikit-Learn Implementation (lr_scikit.ipynb)
+
+- LinearRegression model from Scikit-Learn
+- Model training and prediction
+- Regression line visualization
+- Comparison with custom implementation
+
+---
 
 ## Dataset
 
-The project uses the `Salary_Data.csv` dataset containing:
+The project uses the Salary Dataset containing:
 
 | Feature | Description |
 |----------|-------------|
 | YearsExperience | Years of professional experience |
 | Salary | Salary earned |
 
+The objective is to predict salary based on years of experience.
+
+---
+
 ## Project Structure
 
-```
+```text
 Linear_Regressor/
 │
-├── main.py
-├── LR.ipynb
-├── Salary_Data.csv
-├── requirements.txt
+├── LR.ipynb              # Linear Regression implemented from scratch
+├── lr_scikit.ipynb       # Linear Regression using Scikit-Learn
+├── Salary_Data.csv       # Dataset
+├── requirements.txt      # Project dependencies
 └── README.md
 ```
 
+---
+
 ## Mathematical Formulation
 
-Prediction:
+### Prediction Function
 
 ŷ = wx + b
 
-Loss Function:
+where:
+
+- x = Input feature (Years of Experience)
+- ŷ = Predicted Salary
+- w = Weight (slope)
+- b = Bias (intercept)
+
+### Loss Function
 
 J(w,b) = (1/2n) Σ(y - ŷ)²
 
-Gradients:
+### Gradient Computation
 
 ∂J/∂w = -(1/n) Σ[(y - ŷ)x]
 
 ∂J/∂b = -(1/n) Σ(y - ŷ)
 
-Parameter Updates:
+### Parameter Updates
 
-w = w + α * w_grad
+w = w + α · w_grad
 
-b = b + α * b_grad
+b = b + α · b_grad
 
 where α is the learning rate.
+
+---
 
 ## Hyperparameters
 
@@ -78,7 +96,9 @@ where α is the learning rate.
 |------------|-------------|
 | lr | Learning Rate |
 | max_iter | Maximum training iterations |
-| threshold | Early stopping threshold |
+| threshold | Convergence threshold for early stopping |
+
+---
 
 ## Installation
 
@@ -95,47 +115,72 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## Run
+---
+
+## Dependencies
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-Learn
+
+---
+
+## Running the Project
+
+### From Scratch Implementation
+
+Open and run:
 
 ```bash
-python main.py
+LR.ipynb
 ```
 
-## Example Output
+### Scikit-Learn Implementation
 
-- Training loss decreases over iterations.
-- Best-fit regression line is plotted against the dataset.
-- Learned weight and bias values are displayed.
+Open and run:
 
-## Learning Objectives
+```bash
+lr_scikit.ipynb
+```
 
-This project was built to understand:
+---
 
+## Learning Outcomes
+
+This project helped in understanding:
+
+- Linear Regression fundamentals
+- Gradient Descent optimization
+- Mean Squared Error (MSE)
+- Parameter updates using gradients
 - Object-Oriented Programming in Python
-- Gradient Descent
-- Loss Functions
-- Parameter Optimization
-- Machine Learning Fundamentals
-- NumPy Vectorization
+- NumPy vectorized operations
+- Data normalization and preprocessing
+- Comparison between custom ML implementations and Scikit-Learn
+
+---
 
 ## Future Improvements
 
 - Multiple Linear Regression
-- Feature Scaling
+- Polynomial Regression
+- Feature Scaling Pipelines
 - R² Score Evaluation
 - Mini-Batch Gradient Descent
 - Stochastic Gradient Descent
-- Model Saving and Loading
+- Model Serialization and Deployment
+
+---
 
 ## Author
 
-Sreedevi K
+**Sreedevi K**
 
 Computer Science Engineering Student  
 National Institute of Technology Calicut
 
-LinkedIn:
-https://www.linkedin.com/in/sreedevi-k-tech
+LinkedIn: https://www.linkedin.com/in/sreedevi-k-tech
 
-GitHub:
-https://github.com/sreedevi101010
+GitHub: https://github.com/sreedevi101010
